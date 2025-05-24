@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Habit Tracker</h1>
+        
+        <!-- Current Date Display -->
+        <div class="date-display">
+            <h2 id="current-date">Loading date...</h2>
+        </div>
+
+        <!-- Score Section -->
+        <div class="score-section">
+            <div class="score-box">
+                <h2>Swetha</h2>
+                <div class="score" id="swetha-score">0</div>
+            </div>
+            <div class="score-box">
+                <h2>Akshaya</h2>
+                <div class="score" id="akshaya-score">0</div>
+            </div>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary-section">
+            <div class="summary-box">
+                <h3>Today's Scores</h3>
+                <div class="daily-scores">
+                    <div class="daily-score">
+                        <span>Swetha:</span>
+                        <span id="swetha-daily-score">0</span>
+                    </div>
+                    <div class="daily-score">
+                        <span>Akshaya:</span>
+                        <span id="akshaya-daily-score">0</span>
+                    </div>
+                </div>
+                <div class="leader-status" id="today-leader-status">
+                    <!-- Will be updated by JavaScript -->
+                </div>
+            </div>
+            <div class="summary-box">
+                <h3>Overall Scores</h3>
+                <div class="overall-scores">
+                    <div class="overall-score">
+                        <span>Swetha:</span>
+                        <span id="swetha-overall-score">0</span>
+                    </div>
+                    <div class="overall-score">
+                        <span>Akshaya:</span>
+                        <span id="akshaya-overall-score">0</span>
+                    </div>
+                </div>
+                <div class="leader-status" id="overall-leader-status">
+                    <!-- Will be updated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Habits Table -->
+        <div class="date-picker-section">
+            <label for="date-picker"><strong>Select Date:</strong></label>
+            <input type="date" id="date-picker" />
+        </div>
+        <div class="habits-section">
+            <h3>Today's Habits</h3>
+            <table id="habits-table">
+                <thead>
+                    <tr>
+                        <th>Habit</th>
+                        <th>Swetha's Status</th>
+                        <th>Akshaya's Status</th>
+                        <th>Points</th>
+                        <th>Swetha's Action</th>
+                        <th>Akshaya's Action</th>
+                    </tr>
+                </thead>
+                <tbody id="habits-body">
+                    <!-- Will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Add New Habit Form -->
+        <div class="add-habit-section">
+            <h3>Add New Habit</h3>
+            <form id="add-habit-form">
+                <input type="text" id="habit-name" placeholder="Habit name" required>
+                <input type="number" id="habit-points" placeholder="Points" required min="1">
+                <button type="submit">Add Habit</button>
+            </form>
+        </div>
+
+        <!-- Recent Activity Log -->
+        <div class="activity-log">
+            <h3>Recent Activity</h3>
+            <div id="activity-list">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html> 
